@@ -1,3 +1,3 @@
 # tf-module-assignment
 
-# demonstrate terraform workspaces and use of modules to create aws resources
+# build aws cloud infrastructure for ce7 sctp microservice project 

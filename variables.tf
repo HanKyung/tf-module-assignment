@@ -1,3 +1,4 @@
+
 variable "aws_region" {
   type        = string
   description = "AWS region to use for resources."
@@ -57,11 +58,13 @@ variable "company" {
 variable "project" {
   type        = string
   description = "Project name for resource tagging"
+  default     = "CE7"
 }
 
 variable "billing_code" {
   type        = string
   description = "Billing code for resource tagging"
+  default     = "CE7"
 }
 
 variable "naming_prefix" {
@@ -74,4 +77,62 @@ variable "environment" {
   type        = string
   description = "Environment for deployment"
   default     = "development"
+}
+
+
+
+################################################################################
+# Default Variables
+################################################################################
+
+variable "profile" {
+  type    = string
+  default = "default"
+}
+################################################################################
+# EKS Cluster Variables
+################################################################################
+
+variable "cluster_name" {
+  type    = string
+  default = "tf-cluster"
+}
+
+variable "rolearn" {
+  description = "Add admin role to the aws-auth configmap"
+  default     = "CE7"
+}
+
+################################################################################
+# ALB Controller Variables
+################################################################################
+
+variable "env_name" {
+  type    = string
+  default = "dev"
+}
+
+variable "aws_role_arn" {
+  type    = string
+  default = "arn:aws:iam::255945442255:role/stephen-tf-cluster-cluster-20241011194319139900000005"
+}
+
+# variable "db_subnet_group_name" {
+#   type=string
+#   default = "value"
+# }
+
+################################################################################
+# Lambda  Variables
+################################################################################
+variable "lambda_function_name" {
+  description = "Name of lambda function"
+  type        = string
+  default     = "stephen-initDBFunction"
+}
+
+variable "lambda_file_name" {
+  description = "Name of lambda file to be zipped"
+  type        = string
+  default     = "stephen-init-rds-lambda-fn"
 }
