@@ -22,7 +22,7 @@ resource "aws_db_instance" "friends_db_instance" {
   vpc_security_group_ids = [aws_security_group.stephen_rds_sg.id]
   db_subnet_group_name   = aws_db_subnet_group.default.name
   multi_az               = false
-  publicly_accessible    = true
+  publicly_accessible    = false
 
   # Explicit dependency on the VPC module
   depends_on = [module.stephen-assessment-vpc]

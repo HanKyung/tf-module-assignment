@@ -1,6 +1,7 @@
 import pymysql
 import os
 
+# comment
 def lambda_handler(event, context):
     rds_host = os.environ['RDS_HOST']
     name = os.environ['RDS_USER']
