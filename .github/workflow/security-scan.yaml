@@ -3,6 +3,7 @@ on:
   pull:
     branches:
       - master
+  push:
 jobs:
   security-iac:
     runs-on: ubuntu-latest
