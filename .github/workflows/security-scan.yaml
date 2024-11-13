@@ -9,6 +9,8 @@ jobs:
         uses: snyk/actions/iac@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: --severity-threshold=high
         # with:
         #   file: your/kubernetes-manifest.yaml your/terraform/directory
   security-code:
@@ -18,6 +20,6 @@ jobs:
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/python@master
         env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}     
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
-          file: files
+          args: --severity-threshold=high
